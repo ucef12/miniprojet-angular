@@ -1,15 +1,20 @@
 <form>
     <div class="mb-3">
       <label for="exampleInputFirstname" class="form-label">First name</label>
-      <input type="email" class="form-control" id="exampleInputFirstname" aria-describedby="Last name !">
+      <input type="text" name="fn" class="form-control" [(ngModel)]="user.firstname" id="exampleInputFirstname" aria-describedby="Last name !">
     </div>
     <div class="mb-3">
-      <label for="exampleInputLastname" class="form-label">Last name</label>
-      <input type="Last name" class="form-control" id="exampleInputLastname">
+      <label for="exampleInputLastname"  class="form-label">Last name</label>
+      <input type="text" name="ln" class="form-control"  [(ngModel)]="user.lastname" id="exampleInputLastname">
     </div>
     <div class="mb-3">
         <label for="exampleInputEmail" class="form-label">Email</label>
-        <input type="Email" class="form-control" id="exampleInputEmail">
+        <input type="Email" class="form-control" name="email" [(ngModel)]="user.email" id="exampleInputEmail">
       </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+      <div class="mb-3" *ngIf="!NotEdit">
+        <label for="exampleInputEmail" class="form-label">Password</label>
+        <input type="password" class="form-control" name="pass" [(ngModel)]="user.password" id="exampleInputEmail">
+      </div>
+    <button type="submit" class="btn btn-primary" (click)="add()">Submit</button>
   </form>
+ 
