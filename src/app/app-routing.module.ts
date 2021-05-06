@@ -6,8 +6,13 @@ import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {path:'add-user',component:AddUserComponent},
+
   {path:'users',component:UsersComponent},
-   {path:'',component:LoginComponent}
+   {path:'',component:LoginComponent},
+
+  {path:'edit-user/:id',component:AddUserComponent},
+  {path:'',component:UsersComponent}
+
 ];
 
 @NgModule({
